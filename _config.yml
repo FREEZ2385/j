@@ -16,7 +16,7 @@ description: >-                        # used by seo meta and the atom feed
   日本で色んな開発勉強をしてフロントエンド、バックエンド、インフラを全てやりたいな開発者のブローグ
 
 # Replace with your domain, e.g. 'https://username.github.io'
-url: 'https://freez2385.github.io/j'
+url: 'https://freez2385.github.io/j/'
 
 author: Freez                  # change to your full name
 
@@ -102,7 +102,7 @@ defaults:
       location: Post
       breadcrumb:
         -
-          label: 홈
+          label: ホーム
           url: /
   -
     scope:
@@ -116,7 +116,7 @@ defaults:
       location: Tag
       breadcrumb:
         -
-          label: 홈
+          label: ホーム
           url: /
         -
           label: タグ
@@ -128,7 +128,7 @@ defaults:
       location: Category
       breadcrumb:
         -
-          label: 홈
+          label: ホーム
           url: /
         -
           label: カテゴリー
@@ -141,7 +141,7 @@ defaults:
       dynamic_title: true    # Hide title in mobile screens.
       breadcrumb:
         -
-          label: 홈
+          label: ホーム
           url: /
   -
     scope:

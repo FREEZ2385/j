@@ -5,28 +5,21 @@ categories: [Development, React]
 tags: [React, Component, MaterialUI]
 seo:
   date_modified: 2020-10-10 23:15:13 +0900
-
-
-
-
-
-
-
 ---
 
-**본 포스트는 MacOS 10.15.7 을 기준으로 작성하였습니다.**
+**본 ポスト는 MacOS 10.15.7 을 기준으로 작성하였습니다.**
 
 필자는 React를 사용하면서 UI에 대한 프레임워크로는 Material-UI라는 프레임워크를 사용하고 있다. 상당히 깔끔한 디자인에다 편집하기 쉬운 컴포넌트들로 구성되어 있으며, CSS도 어렵지 않게 수정할 수 있다는 것이 매력적이였다. 사실상 컴포넌트들로 세팅할 수 있어서 단지 불러오기만 하면 알아서 구성할 수 있고 템플릿 작업 시간도 덜 수 있어서 좋다.
 
-지금은 프론트, 백엔드 웹 개발을 하고 있어서 프론트에 대한 부담과 디자인에 대한 부담을 동시에 줄일 수 있다는 것이 좋아서 Material-UI를 자주 사용하고 있다.  거기에 Material-UI 페이지 안에서 샘플로 템플릿이 있어 좋은 레퍼런스가 될 수도 있다.
+지금은 프론트, 백엔드 웹 개발을 하고 있어서 프론트에 대한 부담과 디자인에 대한 부담을 동시에 줄일 수 있다는 것이 좋아서 Material-UI를 자주 사용하고 있다. 거기에 Material-UI 페이지 안에서 샘플로 템플릿이 있어 좋은 레퍼런스가 될 수도 있다.
 
 그렇다면 실제로 Material-UI를 작성하는 방법에 대해 작성해보도록 하겠다. 이전에 필자가 작성해놓은 간단한 템플릿을 만들어 Github에 올려둔 것이 있다. 참고하면서 해보는 것도 좋을 것 같다.
 
 ### Material-UI example repository (Freez Github) : [react-material-ui-project](https://github.com/FREEZ2385/react-material-ui-project)
 
-### Material-UI 홈페이지 : [Material-UI](https://material-ui.com/)
+### Material-UI ホーム페이지 : [Material-UI](https://material-ui.com/)
 
------
+---
 
 ## Material UI 설치
 
@@ -35,7 +28,7 @@ seo:
 Material-UI의 컴포넌트 전용 패키지 설치
 
 ```
-npm install @material-ui/core 
+npm install @material-ui/core
 
 yarn add @material-ui/core
 ```
@@ -56,7 +49,7 @@ yarn add @material-ui/icons
 
 설치가 완료되었다면 간단한 버튼을 제작해보도록 하겠다.
 
------
+---
 
 ## Material UI을 이용한 템플릿 작성
 
@@ -65,60 +58,63 @@ yarn add @material-ui/icons
 예시로 Github에 사용된 레포지터리의 ButtonComponent.js의 코드를 가져와보았다.
 
 ```javascript
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
 
 const buttonStyle = makeStyles((theme) => ({
-    large: {
-      width: 256,
-      marginRight: 20,
-    },
-    middle: {
-      width: 164,
-      marginRight: 20,
-    },
-    small: {
-      width: 75,
-      marginRight: 20,
-    },
-  }));
+  large: {
+    width: 256,
+    marginRight: 20,
+  },
+  middle: {
+    width: 164,
+    marginRight: 20,
+  },
+  small: {
+    width: 75,
+    marginRight: 20,
+  },
+}));
 
 export default function ButtonComponent(props) {
-    const { text, size, onClick } = props;
-    const sizeStyle = buttonStyle();
+  const { text, size, onClick } = props;
+  const sizeStyle = buttonStyle();
 
-    return (
-        <Button variant="contained" color="Secondary" className={sizeStyle[size]} onClick={onClick}>
-        {text}
-        </Button>
-        );
+  return (
+    <Button
+      variant="contained"
+      color="Secondary"
+      className={sizeStyle[size]}
+      onClick={onClick}
+    >
+      {text}
+    </Button>
+  );
 }
-
 ```
 
 Material-UI의 기본적인 컴포넌트를 import시켜와 로컬로 컴포넌트 작업을 시켰다. 필자는 그대로의 버튼을 작성하는 것도 괜찮은 방법이지만, 규칙이나 이런 것들을 생각해 컴포넌트로 작성하였다. text, size, onClick의 props를 받아오면 각자 자기위치에서 사용할 수 있도록 작성해보았다. 그렇다면 실제로 보기 위해 App.js에 넣어보도록 하겠다. App.js는 단순한 예시로 작성되었기 때문에 Github의 레포지터리에는 표시되지 않는다.
 
 ```javascript
-import { Container } from '@material-ui/core';
-import React from 'react';
-import './App.css';
-import ButtonComponent from './component/Atoms/ButtonComponent';
+import { Container } from "@material-ui/core";
+import React from "react";
+import "./App.css";
+import ButtonComponent from "./component/Atoms/ButtonComponent";
 
 function App() {
   return (
     <div className="App">
       <div className="button-area">
-        <ButtonComponent text="Large-Button" onClick="" size="large"/>
-        <ButtonComponent text="Middle-Button" onClick="" size="middle"/>
-        <ButtonComponent text="Small-Button" onClick="" size="small"/>
+        <ButtonComponent text="Large-Button" onClick="" size="large" />
+        <ButtonComponent text="Middle-Button" onClick="" size="middle" />
+        <ButtonComponent text="Small-Button" onClick="" size="small" />
       </div>
     </div>
   );
 }
 
 export default App;
-
 ```
 
 간단하게 App.js를 이런 식으로 구성해보았다. 이렇게 작성을 했다면 다음과 같은 화면으로 나올 것이다.

@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
 [![996.icu](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu)
 
-프리즈의 귀차니즘 블로그 전용 Git 컴포넌트로 기술 개발 및 관련 정보에 관한 글들을 포스트로 작성해 사용할 것이다.
+프리즈의 귀차니즘 블로그 전용 Git 컴포넌트로 기술 개발 및 관련 정보에 관한 글들을 ポスト로 작성해 사용할 것이다.
 
 ## 설치 방법
 
@@ -14,18 +14,17 @@ Follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete th
 
 In addition, if your machine is running Debian or macOS, make sure you have the [GNU coreutils](https://www.gnu.org/software/coreutils/) installed. Otherwise, get it by:
 
-* Debian
+- Debian
 
 ```console
 $ sudo apt-get install coreutils
 ```
 
-* macOS
+- macOS
 
 ```console
 $ brew install coreutils
 ```
-
 
 ### Jekyll Plugins
 
@@ -45,9 +44,7 @@ $ bundle install
 
 `bundle` will automatically install all the dependent Jekyll Plugins that listed in the `Gemfile`.
 
-
 ## Usage
-
 
 ### Directory Structure
 
@@ -56,14 +53,14 @@ The main files and related brief introductions are listed below.
 ```sh
 jekyll-theme-chirpy/
 ├── _data
-├── _includes      
+├── _includes
 ├── _layouts
 ├── _posts          # posts stay here
 ├── _scripts
 │   └── travis      # CI stuff, remove it
 ├── .travis.yml     # remove this, too
 ├── .github         # remove it
-├── assets      
+├── assets
 ├── tabs
 │   └── about.md    # the ABOUT page
 ├── .gitignore
@@ -80,28 +77,25 @@ jekyll-theme-chirpy/
 └── sitemap.xml
 ```
 
-
 As mentioned above, some files or directories should be removed from your repo:
 
 - .travis.yml
 - .github
-- _scripts/travis
-
+- \_scripts/travis
 
 ### Customization
 
 Basically, go to `_config.yml` and customize the variables as needed, some of them are typical options:
 
-* Avatar
-    
-    `avatar` defines the source image location. The sample image is `/assets/img/sample/avatar.jpg`. It should be replaced by your own one. Notice that a huge image file will increase the load time of your site, so keep your avatar size as samll as possible(may be *<https://tinypng.com/>* will help).
+- Avatar
 
-* TimeZone
+  `avatar` defines the source image location. The sample image is `/assets/img/sample/avatar.jpg`. It should be replaced by your own one. Notice that a huge image file will increase the load time of your site, so keep your avatar size as samll as possible(may be _<https://tinypng.com/>_ will help).
 
-    To ensure that the posts' release date matches the city you live in, please modify the field `timezone` correctly. A list of all available values can be found on [TimezoneConverter](http://www.timezoneconverter.com/cgi-bin/findzone/findzone) or [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+- TimeZone
 
+  To ensure that the posts' release date matches the city you live in, please modify the field `timezone` correctly. A list of all available values can be found on [TimezoneConverter](http://www.timezoneconverter.com/cgi-bin/findzone/findzone) or [Wikipedia](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
-###  Run Locally
+### Run Locally
 
 You may want to preview the site before publishing, so just run the script tool:
 
@@ -113,7 +107,7 @@ Open a modern brower and visit at <http://localhost:4000>.
 
 Few days later, you may find that the file modification(e.g. edits to a post) does not refresh in real time by using `run.sh`. Don't worry, the advanced option `-r` (or `--realtime`) will solve this problem, but it requires [**fswatch**](http://emcrisostomo.github.io/fswatch/) to be installed on your machine. Type `-h` for more information.
 
-###  Deploying to GitHub Pages
+### Deploying to GitHub Pages
 
 Before the deployment begins, ensure the `url` in file `_config.yml` has been set to `https://<username>.github.io`(or the custom domain, if you have. e.g. `https://yourdomain.com`). What's more, if you prefer to the [Project site](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites), change `baseurl` of file `_config.yml` to your project name, starting with a slash. e.g. `/project`.
 
@@ -121,14 +115,14 @@ Before the deployment begins, ensure the `url` in file `_config.yml` has been se
 
 By deploying the site in this way, you're allowed to push the source code directly to the remote.
 
-> **Note**: If you want to use any third-party Jekyll plugins that not in [this list](https://pages.github.com/versions/), stop reading the current approach and go to [*Option 2: Build locally*](#option-2-build-locally).
+> **Note**: If you want to use any third-party Jekyll plugins that not in [this list](https://pages.github.com/versions/), stop reading the current approach and go to [_Option 2: Build locally_](#option-2-build-locally).
 
 **1**. Rename the repository to:
 
-|Site Type | Repo's Name|
-|:---|:---|
-|User or Organization | `<username>.github.io`|
-|Project| any one except `<username>.github.io`, let's say `project`|
+| Site Type            | Repo's Name                                                |
+| :------------------- | :--------------------------------------------------------- |
+| User or Organization | `<username>.github.io`                                     |
+| Project              | any one except `<username>.github.io`, let's say `project` |
 
 **2**. Commit the changes of the repo first, then run the initialization script:
 
@@ -136,30 +130,29 @@ By deploying the site in this way, you're allowed to push the source code direct
 $ bash tools/init.sh
 ```
 
->**Note**: The *Recent Update* requires the posts' latest git-log date, so make sure the changes in `_posts` have been committed before running this command.
+> **Note**: The _Recent Update_ requires the posts' latest git-log date, so make sure the changes in `_posts` have been committed before running this command.
 
-it will automatically generates the *Latest Modified Date* and *Categories / Tags* page for the posts.
+it will automatically generates the _Latest Modified Date_ and _Categories / Tags_ page for the posts.
 
 **3**. Push the changes to `origin/master` then go to GitHub website and enable GitHub Pages service for the repo.
 
 **4**. Check it out:
 
-|Site Type | Site URL |
-|:---|:---|
-|User or Organization | `https://<username>.github.io/`|
-|Project| `https://<username>.github.io/project/`|
-
+| Site Type            | Site URL                                |
+| :------------------- | :-------------------------------------- |
+| User or Organization | `https://<username>.github.io/`         |
+| Project              | `https://<username>.github.io/project/` |
 
 #### Option 2: Build Locally
 
 For security reasons, GitHub Pages runs on `safe` mode, which means the third-party Jekyll plugins or custom scripts won't work. If you want to use any another plugins that not in the [whitelist](https://pages.github.com/versions/), **you have to generate the site locally rather than on GitHub Pages**.
 
-**1**. Browse to GitHub website, create a brand new repo named: 
+**1**. Browse to GitHub website, create a brand new repo named:
 
-|Site Type | Repo's Name|
-|:---|:---|
-|User or Organization | `<username>.github.io`|
-|Project| any one except `<username>.github.io`, let's say `project`|
+| Site Type            | Repo's Name                                                |
+| :------------------- | :--------------------------------------------------------- |
+| User or Organization | `<username>.github.io`                                     |
+| Project              | any one except `<username>.github.io`, let's say `project` |
 
 and clone it.
 
@@ -175,10 +168,10 @@ The generated static files will be placed in the root of `/path/to/local/project
 
 **4**. Visit at:
 
-|Site Type | Site URL |
-|:---|:---|
-|User or Organization | `https://<username>.github.io/`|
-|Project| `https://<username>.github.io/project/`|
+| Site Type            | Site URL                                |
+| :------------------- | :-------------------------------------- |
+| User or Organization | `https://<username>.github.io/`         |
+| Project              | `https://<username>.github.io/project/` |
 
 and enjoy!
 
@@ -190,18 +183,15 @@ For more details and the better reading experience, please check out the [tutori
 
 The old saying: "Tow heads are better than one. Five heads are better than two." So, welcome to report bugs, improve code quality or submit a new feature. For more information, see [contributing guidelines](.github/CONTRIBUTING.md).
 
-
 ## Credits
 
 This theme is mainly built with [Jekyll](https://jekyllrb.com/) ecosystem, [Bootstrap](https://getbootstrap.com/), [Font Awesome](https://fontawesome.com/) and some other wonderful tools(their copyright information can be found in the relevant files).
 
 :tada:Thanks to all the volunteers who contributed to this project, their github ID is on [this list](https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors). Also, I won't forget the guys who submitted the issues(or unmerged PR), they reported bugs, shared ideas or inspired me to write more readable documentation.
 
-
 ## Support
 
 If you enjoy this theme or find it helpful, please consider becoming my sponsor, I'd really appreciate it! Click the button <kbd>:heart:Sponsor</kbd> at the top of the [Home Page](https://github.com/cotes2020/jekyll-theme-chirpy) and choose a link that suits you to donate. This will encourage me and help me maintain this project.
-
 
 ## License
 

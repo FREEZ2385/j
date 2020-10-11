@@ -5,15 +5,11 @@ categories: [Development, Python, Django Restframework]
 tags: [Django, DjangoRestframework]
 seo:
   date_modified: 2020-09-25 21:02:58 +0900
-
-
-
-
 ---
 
-**본 포스트는 MacOS 10.15.7 을 기준으로 작성하였습니다.**
+**본 ポスト는 MacOS 10.15.7 을 기준으로 작성하였습니다.**
 
-저번에 작성한 포스트에서 Django Restframework를 이용하여 Restful Api로 만들어 보는 포스트를 사용해보았다. 필자는 현재 개발하는 프로젝트에서 모델에서 직접 가져오는 View이외에도 다른 Request를 불러올 시 백엔드에서 처리하는 함수에도 사용하며 여러 부분에서 사용하는 url을 작성했다. 이번에 작성한 코드를 리팩토링겸 재정리를 위해 작성해보게 되었다. 
+저번에 작성한 ポスト에서 Django Restframework를 이용하여 Restful Api로 만들어 보는 ポスト를 사용해보았다. 필자는 현재 개발하는 프로젝트에서 모델에서 직접 가져오는 View이외에도 다른 Request를 불러올 시 백엔드에서 처리하는 함수에도 사용하며 여러 부분에서 사용하는 url을 작성했다. 이번에 작성한 코드를 리팩토링겸 재정리를 위해 작성해보게 되었다.
 
 이전에 포스팅한 프로젝트에 이어서 여러 응용하는 법에 대해 추가로 작성해보았다. 이전 포스팅 작성에 대해서는 해당 URL을 올리도록 하겠다.
 [Django restframework의 기본 및 시작하기](https://freez2385.github.io/posts/Python-Django-django_restframework1/)
@@ -45,7 +41,7 @@ seo:
 
 ## Filtering, Ordering
 
-데이터베이스에서 모델로 Queryset를 읽을때  Queryset안에서 `filter` 를 하게 되면 쉽게 필터링이 가능하지만 Django Restframework에서 직접 Get 리퀘스트를 받고 Queryset를 부르고 `filter` 를 하면 엄청 귀찮아질 뿐더러 나중에 response도 하나하나 다 출력해줘야한다. 그런 귀찮은 짓을 하지 않기 위한 기능이 `django-filter` 라이브러리를 이용한 기능이다. 해당 기능은 공식 문서에도 기능이 작성되어 있으며 해당 문서를 참고하여 작성하였다.
+데이터베이스에서 모델로 Queryset를 읽을때 Queryset안에서 `filter` 를 하게 되면 쉽게 필터링이 가능하지만 Django Restframework에서 직접 Get 리퀘스트를 받고 Queryset를 부르고 `filter` 를 하면 엄청 귀찮아질 뿐더러 나중에 response도 하나하나 다 출력해줘야한다. 그런 귀찮은 짓을 하지 않기 위한 기능이 `django-filter` 라이브러리를 이용한 기능이다. 해당 기능은 공식 문서에도 기능이 작성되어 있으며 해당 문서를 참고하여 작성하였다.
 [Django Restframework How to Filtering](https://www.django-rest-framework.org/api-guide/filtering/#api-guide)
 
 필터링을 하기 위해선 우선 라이브러리가 필요하다. 이전 포스팅에서 설치 방법때 같이 설치했다면 설치할 필요가 없지만 다시한번 작성하도록 하겠다.
@@ -92,7 +88,7 @@ class BookViewSet(viewsets.ModelViewSet):
 
 ![rest_framework1](../../assets/img/2020_09_25_python_django_restframework2/rest_framework1.png)
 
-모델의 author 필드를 직접 필터링 하여 lee라는 이름을 가진 저자의 책들을 필터링 해본 결과 데이터에는 lee 저자의 책들이 전부 필터링되었다. 이렇게 모델의 필터링을 손쉽게 Response하도록 하는 `django-filter` 기능이였다. 
+모델의 author 필드를 직접 필터링 하여 lee라는 이름을 가진 저자의 책들을 필터링 해본 결과 데이터에는 lee 저자의 책들이 전부 필터링되었다. 이렇게 모델의 필터링을 손쉽게 Response하도록 하는 `django-filter` 기능이였다.
 
 다음은 필터링과 같은 소트 기능을 가진 `Ordering` 을 해보도록 하겠다. 역시 모델의 Queryset기능인 `order_by` 를 쓰면 편하지만, 역시 하나하나 쓰기 귀찮기에 위에 필터링과 똑같이 Backend등록과 필드 등록을 하도록 하겠다. 오더링은 Django RestFramework에 있는 ordering으로 가능하기에 특별히 라이브러리를 설치할 필요가 없다.
 

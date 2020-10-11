@@ -5,15 +5,11 @@ categories: [Development, Python, Pandas]
 tags: [Pandas, read_excel, Dataframe]
 seo:
   date_modified: 2020-09-23 21:43:04 +0900
-
-
 ---
 
+##### **본 ポスト는 MacOS 10.15.6 을 기준으로 작성하였습니다.**
 
-
-##### **본 포스트는 MacOS 10.15.6 을 기준으로 작성하였습니다.**
-
-간혹 개발을 하면서 필자는 엑셀파일을 직접 불러들여서 그 안에 데이터를 분석 및 출력하는 작업을  맡고 있다. 직접 파이썬을 사용하며 엑셀파일까지 불러들이는 것은 가능하지만, 실제로 데이터화시키는 것에 큰 곤란함이 있었다. 특히 데이터 관련은 Pandas의 Dataframe이 쉽게 접하기 때문에, 일일이 데이터를 불러들여 리스트화시킨 다음 다시 그걸 Dataframe화 시키고 행과 열을 맞추는 귀찮은 작업들을 연발하게 된다.
+간혹 개발을 하면서 필자는 엑셀파일을 직접 불러들여서 그 안에 데이터를 분석 및 출력하는 작업을 맡고 있다. 직접 파이썬을 사용하며 엑셀파일까지 불러들이는 것은 가능하지만, 실제로 데이터화시키는 것에 큰 곤란함이 있었다. 특히 데이터 관련은 Pandas의 Dataframe이 쉽게 접하기 때문에, 일일이 데이터를 불러들여 리스트화시킨 다음 다시 그걸 Dataframe화 시키고 행과 열을 맞추는 귀찮은 작업들을 연발하게 된다.
 
 그것들을 무시하고 한방에 Dataframe화 시키는 방법이 있다. 그것이 Pandas의 기능 중 하나인 read_excel이라는 기능이다. 직접적으로 파일 위치만 입력하고 부가적으로 파라미터에 요구데이터를 입력하면 자동으로 엑셀의 데이터들이 Dataframe화 되는 것을 확인할 수 있다. 그래서 필자는 이거 찾고난 뒤로 엑셀파일을 읽는 기능은 전부 read_excel로 사용하고 있다.
 
@@ -33,9 +29,9 @@ Jupyter notebook
 
 ## Read_excel 파일 불러오기
 
-Read_excel은 Pandas에서 쉽게 불러올 수 있으며 기본적인 내용은 공식 문서에 작성되어있다. 
+Read_excel은 Pandas에서 쉽게 불러올 수 있으며 기본적인 내용은 공식 문서에 작성되어있다.
 
-공식 문서 
+공식 문서
 [pandas.read_excel](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html)
 
 예시 엑셀 파일
@@ -54,8 +50,6 @@ pd.options.display.max_rows = 999 # 데이터 프레임 표시 최대 열수를 
 pd.set_option('display.max_columns',999) # 데이터 프레임 표시 최대 행수를 999로 지정
 ```
 
- 
-
 파일을 불러올 파일의 os와 numpy, pandas를 임포트 시키고 밑의 두 옶션을 데이터 프레임에 생략되는 열과 행을 전부 보여주는 코드이다. 알아두면 제법 유용하게 쓰인다.
 
 ```python
@@ -70,7 +64,7 @@ Output :
 
 이렇게 쉽게 데이터프레임화 시킬 수 있다는 것이다. 필자는 이런 간편한 데이터프레임화에 반하여 잘 사용하고 있다. 더불어 read_excel에는 다른 파라미터도 존재해 원하는 헤더를 행이름으로 지정 가능하며 어디까지 불러올 수 있는가도 표현이 가능하다.
 
-------
+---
 
 ## Read_excel 응용
 
@@ -91,7 +85,7 @@ df = pd.read_excel(file_name, header=7)
 display(df)
 ```
 
-Output : 
+Output :
 ![excel_output2](../../assets/img/2020_09_14pandas_read_excel/pandas_read_excel4.png)
 
 ### index_col
@@ -107,7 +101,7 @@ df = pd.read_excel(file_name, header=7, index_col=0)
 display(df)
 ```
 
-Output : 
+Output :
 ![excel_output3](../../assets/img/2020_09_14pandas_read_excel/pandas_read_excel5.png)
 
 이걸로 각 데이터프레임의 인덱스가 사원명으로 지정되었다. 앞으로 데이터프레임에서 임의 사원의 데이터를 확인할 수 있으며, 인덱스를 활용한 데이터를 사용할 수 있다.
@@ -125,7 +119,7 @@ df = pd.read_excel(file_name, header=7, index_col=0, usecols='A,D:E')
 display(df)
 ```
 
-Output : 
+Output :
 ![excel_output3](../../assets/img/2020_09_14pandas_read_excel/pandas_read_excel6.png)
 
 ### **keep_default_na**
@@ -141,5 +135,5 @@ df = pd.read_excel(file_name, header=7, index_col=0, keep_default_na=False)
 display(df)
 ```
 
-Output : 
+Output :
 ![excel_output3](../../assets/img/2020_09_14pandas_read_excel/pandas_read_excel7.png)

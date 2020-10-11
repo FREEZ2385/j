@@ -5,14 +5,9 @@ categories: [Development, Python, Django Restframework]
 tags: [Django, DjangoRestframework]
 seo:
   date_modified: 2020-09-23 21:43:04 +0900
-
-
-
 ---
 
-
-
-**본 포스트는 MacOS 10.15.6 을 기준으로 작성하였습니다.**
+**본 ポスト는 MacOS 10.15.6 을 기준으로 작성하였습니다.**
 
 Django는 웹 프레임워크로 이용하면서 동시에 RestfulAPI 전용의 어플리케이션으로도 활용할 수 있다. RestfulAPI 서버로 활용가능하며 때에 따라서는 백앤드 어플리케이션으로 활용할 수 있다. 필자도 React.Js를 작성하면서 DB에서 불러내는 데이터를 파싱하기 위해 백앤드 전용 어플리케이션으로 Django Rest Framework를 사용하고 있다. 그렇기에 React.Js는 프론트 전용으로만 사용할 수 있어 프론트엔드 백엔드의 정의를 확실히 구분지을 수 있게 되었다.
 
@@ -49,7 +44,7 @@ Django Rest Framework를 설치하고 나면 실제로 RestfulAPI 서버로 쓰�
         └── wsgi.py
 ```
 
-위에 *기호는 기본 프로젝트 디렉토리에서 수정을 조금 한 파일이다. 실제로 모델을 등록하고 추가하기 위해 한 내용들이라고 할 수 있다. Django의 Model등록 방법은 해당 포스트에서 확인하기 바란다.
+위에 \*기호는 기본 프로젝트 디렉토리에서 수정을 조금 한 파일이다. 실제로 모델을 등록하고 추가하기 위해 한 내용들이라고 할 수 있다. Django의 Model등록 방법은 해당 ポスト에서 확인하기 바란다.
 
 <u>추가 예정</u>
 
@@ -104,7 +99,7 @@ REST_FRAMEWORK = {
 
 ## Serializers.py
 
-그리고 main 폴더 안에 serializers.py 파일을 새로 만들어 serializer를 보관하는 파일로 지정하는게 편하다. 
+그리고 main 폴더 안에 serializers.py 파일을 새로 만들어 serializer를 보관하는 파일로 지정하는게 편하다.
 
 ```python
 # add serializers.py
@@ -164,7 +159,7 @@ urlpatterns = [
   path('', include(router.urls)),
   # Django Restframework에 로그인 인증을 위한 URL.
   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    
+
 ]
 
 ```
@@ -206,4 +201,4 @@ python manage.py runserver
 
 ![rest_framework4](../../assets/img/2020_09_23_python_django_restframework1/rest_framework4.png)
 
-이렇게 Restful API로 백엔드 어플리케이션으로 활용이 가능하며 프론트엔드는 React.js로 사용하여 완벽하게 프론트엔드와 백엔드를 나누어 개발이 가능하다는 점과 응용을 하여 인증과 Get 혹은 Post만 사용 가능하게 권한 설정도 가능하다. 자세한 응용법은 다음 포스트에 작성하겠다.
+이렇게 Restful API로 백엔드 어플리케이션으로 활용이 가능하며 프론트엔드는 React.js로 사용하여 완벽하게 프론트엔드와 백엔드를 나누어 개발이 가능하다는 점과 응용을 하여 인증과 Get 혹은 Post만 사용 가능하게 권한 설정도 가능하다. 자세한 응용법은 다음 ポスト에 작성하겠다.
