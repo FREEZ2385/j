@@ -44,7 +44,7 @@ google_site_verification: _fo0YQ3t-OohNenL4cLFX9_sGdqzNIbviBLtJUDDvBs # change t
 #--------------------------
 
 # if your site type is Project Pages site, change below value to '/projectname'
-baseurl: ''
+baseurl: '/j'
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Tokyo
@@ -120,7 +120,7 @@ defaults:
           url: /
         -
           label: タグ
-          url: /j/tabs/tags/
+          url: /tabs/tags/
   -
     scope:
       path: categories
@@ -132,7 +132,7 @@ defaults:
           url: /
         -
           label: カテゴリー
-          url: /j/tabs/categories/
+          url: /tabs/categories/
   -
     scope:
       path: tabs
