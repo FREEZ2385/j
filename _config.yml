@@ -103,7 +103,7 @@ defaults:
       breadcrumb:
         -
           label: ホーム
-          url: /
+          url: /j/
   -
     scope:
       path: _drafts
@@ -120,7 +120,7 @@ defaults:
           url: /
         -
           label: タグ
-          url: /tabs/tags/
+          url: /j/tabs/tags/
   -
     scope:
       path: categories
@@ -132,7 +132,7 @@ defaults:
           url: /
         -
           label: カテゴリー
-          url: /tabs/categories/
+          url: /j/tabs/categories/
   -
     scope:
       path: tabs
